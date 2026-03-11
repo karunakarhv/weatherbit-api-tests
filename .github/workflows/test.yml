@@ -1,0 +1,35 @@
+name: Qantas Loyalty - Weather Bit API Tests
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # daily at midnight UTC
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 20
+        uses: actions/setup-java@v4
+        with:
+          java-version: '20.0.2'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Build and Test with Maven
+        run: mvn clean verify -Dweatherbit.apikey=${{ secrets.API_KEY }}
+
+      - name: Upload Serenity Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: serenity-report
+          path: target/site/
+          retention-days: 30

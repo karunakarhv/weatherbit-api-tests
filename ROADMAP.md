@@ -11,11 +11,11 @@
 
 ## Phase 2 — Hardening & CI/CD
 
-| Item                    | Value                                                      |
-|-------------------------|------------------------------------------------------------|
-| GitHub Actions pipeline | Run tests on every PR; publish Serenity report as artifact |
-| JSON Schema validation  | Assert response structure with `json-schema-validator`     |
-| Secret management       | Store API key in GitHub Secrets / AWS Parameter Store      |
+| Item                    | Value                                                                 |
+|-------------------------|-----------------------------------------------------------------------|
+| GitHub Actions pipeline | Run tests on every PR; publish Serenity report as artifact            |
+| JSON Schema validation  | Assert response structure with `json-schema-validator`                |
+| Secret management       | Store API key in GitHub Secrets / AWS Parameter Store/Secrets Manager |
 
 ---
 

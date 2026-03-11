@@ -12,6 +12,59 @@
 
 ---
 
+## Folder structure
+
+```
+└── 📁weatherbit-api-tests
+    └── 📁.github
+        └── 📁workflows
+            ├── test.yml
+    └── 📁src
+        └── 📁main
+            └── 📁java
+                └── 📁com
+                    └── 📁qantas
+                        └── 📁weather
+                            └── 📁actions
+                                ├── WeatherAPI.java
+                            └── 📁config
+                                ├── ConfigManager.java
+                            └── 📁models
+                                ├── StateMetadata.java
+                                ├── WeatherData.java
+                                ├── WeatherResponse.java
+                            └── 📁utils
+                                ├── TestDataReader.java
+            └── 📁resources
+        └── 📁test
+            └── 📁java
+                └── 📁com
+                    └── 📁qantas
+                        └── 📁weather
+                            └── 📁hooks
+                                ├── Hooks.java
+                            └── 📁runner
+                                ├── TestRunner.java
+                            └── 📁steps
+                                ├── WeatherSteps.java
+            └── 📁resources
+                └── 📁features
+                    ├── AC1_MultiCityWeather.feature
+                    ├── AC2_CoordinatesWeather.feature
+                    ├── AC3_WarmestAustralianCity.feature
+                    ├── AC4_ColdestUSState.feature
+                └── 📁testdata
+                    ├── us_states.json
+                ├── junit-platform.properties
+                ├── serenity.conf
+    ├── .gitignore
+    ├── pom.xml
+    ├── README.md
+    └── ROADMAP.md
+```
+
+---
+
 ## Running the Tests
 
 ### Run all tests
